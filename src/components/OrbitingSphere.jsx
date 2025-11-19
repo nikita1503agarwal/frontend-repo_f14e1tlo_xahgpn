@@ -20,9 +20,8 @@ export default function OrbitingSphere() {
       <div
         className="absolute inset-0 m-auto aspect-square w-[78%] rounded-full shadow-[0_0_120px_rgba(16,185,129,0.35)] animate-spin-slower"
         style={{
-          background:
-            'radial-gradient(closest-side at 35% 35%, rgba(34,197,94,0.95), rgba(16,185,129,0.55) 35%, rgba(6,95,70,0.35) 65%, rgba(0,0,0,0.2) 100%),
-             radial-gradient(circle at 65% 65%, rgba(34,197,94,0.6), rgba(0,0,0,0) 40%)',
+          background: `radial-gradient(closest-side at 35% 35%, rgba(34,197,94,0.95), rgba(16,185,129,0.55) 35%, rgba(6,95,70,0.35) 65%, rgba(0,0,0,0.2) 100%),
+             radial-gradient(circle at 65% 65%, rgba(34,197,94,0.6), rgba(0,0,0,0) 40%)`,
           boxShadow:
             'inset -30px -30px 80px rgba(0,0,0,0.45), inset 18px 18px 40px rgba(34,197,94,0.25), 0 0 0 1px rgba(16,185,129,0.25)'
         }}

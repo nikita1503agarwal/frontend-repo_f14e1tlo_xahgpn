@@ -3,37 +3,7 @@
 > vite
 
 
-  VITE v5.4.20  ready in 266 ms
+  VITE v5.4.20  ready in 291 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.6.250:3000/
-3:39:12 PM [vite] Pre-transform error: Transform failed with 1 error:
-/home/workspace/src/components/OrbitingSphere.jsx:24:149: ERROR: Unterminated string literal
-3:39:13 PM [vite] ✨ new dependencies optimized: lucide-react, framer-motion
-3:39:13 PM [vite] ✨ optimized dependencies changed. reloading
-3:39:13 PM [vite] Pre-transform error: Transform failed with 1 error:
-/home/workspace/src/components/OrbitingSphere.jsx:24:149: ERROR: Unterminated string literal
-The file does not exist at "/home/workspace/node_modules/.vite/deps/chunk-I4MZPW7S.js?v=35394813" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
-3:39:54 PM [vite] Internal server error: Transform failed with 1 error:
-/home/workspace/src/components/OrbitingSphere.jsx:24:149: ERROR: Unterminated string literal
-  Plugin: vite:esbuild
-  File: /home/workspace/src/components/OrbitingSphere.jsx:24:149
-  
-  Unterminated string literal
-  22 |          style={{
-  23 |            background:
-  24 |              'radial-gradient(closest-side at 35% 35%, rgba(34,197,94,0.95), rgba(16,185,129,0.55) 35%, rgba(6,95,70,0.35) 65%, rgba(0,0,0,0.2) 100%),
-     |                                                                                                                                                       ^
-  25 |               radial-gradient(circle at 65% 65%, rgba(34,197,94,0.6), rgba(0,0,0,0) 40%)',
-  26 |            boxShadow:
-  
-      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
-      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
-      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
-      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
-      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
-      at Socket.emit (node:events:508:28)
-      at addChunk (node:internal/streams/readable:559:12)
-      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
-      at Readable.push (node:internal/streams/readable:390:5)
-      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
