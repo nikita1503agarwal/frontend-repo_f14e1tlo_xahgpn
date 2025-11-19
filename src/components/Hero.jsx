@@ -19,7 +19,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-extrabold tracking-tight text-emerald-400 sm:text-5xl lg:text-6xl"
           >
-            Vibe Coding Platform
+            COGNICODE
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <a href="#get-started" className="group inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-black shadow-[0_10px_30px_rgba(16,185,129,0.45)] transition hover:bg-emerald-400">
+            <a href="#login" className="group inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-black shadow-[0_10px_30px_rgba(16,185,129,0.45)] transition hover:bg-emerald-400">
               Get Started
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </a>
