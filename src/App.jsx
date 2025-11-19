@@ -1,71 +1,63 @@
+import React from 'react'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Footer from './components/Footer'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-black text-emerald-100">
+      {/* Top glow */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_-10%,rgba(16,185,129,0.35),transparent)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      {/* Nav */}
+      <header className="relative z-20">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          <div className="inline-flex items-center gap-3">
+            <div className="h-3.5 w-3.5 rounded-full bg-emerald-500 shadow-[0_0_18px_rgba(16,185,129,0.9)]" />
+            <span className="text-sm font-semibold tracking-widest text-emerald-400">VIBE</span>
+            <span className="text-sm font-semibold tracking-widest text-white">CODING</span>
           </div>
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+          <nav className="hidden items-center gap-6 text-sm text-emerald-200/80 sm:flex">
+            <a className="hover:text-emerald-100" href="#features">Features</a>
+            <a className="hover:text-emerald-100" href="#get-started">Get Started</a>
+          </nav>
         </div>
+      </header>
+
+      <main className="relative z-10">
+        <Hero />
+        <Features />
+
+        <section id="get-started" className="mx-auto max-w-7xl px-6 pb-24">
+          <div className="rounded-2xl border border-emerald-400/20 bg-gradient-to-b from-emerald-950/50 to-black/60 p-8 text-center shadow-[inset_0_1px_0_rgba(16,185,129,0.15),0_10px_30px_rgba(0,0,0,0.35)]">
+            <h2 className="text-2xl font-bold text-emerald-300">Start vibing with code</h2>
+            <p className="mx-auto mt-2 max-w-2xl text-emerald-100/80">Open the chat on the left, describe what you want, and watch the workspace come alive with a spinning 3D core and floating bubbles.</p>
+            <div className="mt-6">
+              <a href="#" className="rounded-lg bg-emerald-500 px-5 py-3 font-semibold text-black shadow-[0_10px_30px_rgba(16,185,129,0.45)] transition hover:bg-emerald-400">Launch Workspace</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+
+      {/* Ambient particles */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute left-1/4 top-20 h-24 w-24 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="absolute right-1/4 top-40 h-24 w-24 rounded-full bg-emerald-400/10 blur-3xl" />
+        <div className="absolute left-1/2 bottom-20 h-24 w-24 rounded-full bg-emerald-600/10 blur-3xl" />
       </div>
+
+      {/* Keyframes */}
+      <style>{`
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 14s linear infinite; }
+        @keyframes spin-slower { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slower { animation: spin-slower 28s linear infinite; }
+        @keyframes bubble { 0% { transform: translateY(0) scale(1); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-420px) scale(1.2); opacity: 0; } }
+        .animate-bubble { animation: bubble 9s ease-in infinite; }
+      `}</style>
     </div>
   )
 }
