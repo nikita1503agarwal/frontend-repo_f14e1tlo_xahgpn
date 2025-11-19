@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Footer from './components/Footer'
-import Login from './components/Login'
-import Signup from './components/Signup'
 import NeuralBackground from './components/NeuralBackground'
+import AuthModal from './components/AuthModal'
 
 function App() {
+  const [authOpen, setAuthOpen] = useState(false)
+  const [authDefaultTab, setAuthDefaultTab] = useState('login')
+
+  const openAuth = useCallback((tab = 'login') => {
+    setAuthDefaultTab(tab)
+    setAuthOpen(true)
+  }, [])
+
+  useEffect(() => {
+    function onHashClick(e) {
+      // Intercept #login or #signup clicks to open modal instead of jumping
+      const target = e.target.closest('a[href^="#"]')
+      if (!target) return
+      const hash = target.getAttribute('href')
+      if (hash === '#login' || hash === '#signup') {
+        e.preventDefault()
+        openAuth(hash.replace('#', ''))
+      }
+    }
+    document.addEventListener('click', onHashClick)
+    return () => document.removeEventListener('click', onHashClick)
+  }, [openAuth])
+
   return (
     <div className="min-h-screen bg-black text-emerald-100">
       {/* Neural network background (fixed, behind everything) */}
@@ -33,11 +55,11 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <Features />
-        <Login />
-        <Signup />
       </main>
 
-      <Footer />
+      <Footer onOpenAuth={openAuth} />
+
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} defaultTab={authDefaultTab} />
 
       {/* Ambient particles */}
       <div className="pointer-events-none fixed inset-0 -z-10">

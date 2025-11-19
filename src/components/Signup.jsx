@@ -1,9 +1,17 @@
 import React from 'react'
 import { Mail } from 'lucide-react'
 
-export default function Signup() {
+export default function Signup({ embedded = false }) {
+  const Container = ({ children }) => (
+    embedded ? <div className="mx-auto max-w-xl">{children}</div> : (
+      <section id="signup" className="relative mx-auto max-w-7xl px-6 py-20">
+        {children}
+      </section>
+    )
+  )
+
   return (
-    <section id="signup" className="relative mx-auto max-w-7xl px-6 py-20">
+    <Container>
       <div className="mx-auto max-w-xl rounded-2xl border border-emerald-400/20 bg-gradient-to-b from-emerald-950/50 to-black/60 p-8 shadow-[inset_0_1px_0_rgba(16,185,129,0.15),0_10px_30px_rgba(0,0,0,0.35)]">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold tracking-tight text-emerald-300">Create your COGNICODE account</h2>
@@ -24,7 +32,17 @@ export default function Signup() {
             Create account
           </button>
         </form>
+
+        <div className="mt-6 text-center text-sm text-emerald-300/70">
+          Already have an account?{' '}
+          <button onClick={() => {
+            const evt = new CustomEvent('cogni-switch-auth', { detail: { tab: 'login' } })
+            window.dispatchEvent(evt)
+          }} className="font-semibold text-emerald-300 underline decoration-emerald-400/50 underline-offset-4 hover:text-emerald-200">
+            Sign in
+          </button>
+        </div>
       </div>
-    </section>
+    </Container>
   )
 }

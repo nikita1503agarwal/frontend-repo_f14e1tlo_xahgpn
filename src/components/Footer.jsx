@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Footer() {
+export default function Footer({ onOpenAuth }) {
   return (
     <footer className="relative border-t border-emerald-400/10 bg-black/60 backdrop-blur">
       <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-emerald-300/70">
@@ -8,7 +8,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} COGNICODE. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a className="hover:text-emerald-200" href="#features">Features</a>
-            <a className="hover:text-emerald-200" href="#login">Get Started</a>
+            <button onClick={() => onOpenAuth?.('login')} className="hover:text-emerald-200">Get Started</button>
           </div>
         </div>
       </div>
