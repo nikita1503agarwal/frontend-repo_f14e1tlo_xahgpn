@@ -4,10 +4,14 @@ import Features from './components/Features'
 import Footer from './components/Footer'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import NeuralBackground from './components/NeuralBackground'
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-emerald-100">
+      {/* Neural network background (fixed, behind everything) */}
+      <NeuralBackground />
+
       {/* Top glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_-10%,rgba(16,185,129,0.35),transparent)]" />
 
@@ -50,6 +54,7 @@ function App() {
         .animate-spin-slower { animation: spin-slower 28s linear infinite; }
         @keyframes bubble { 0% { transform: translateY(0) scale(1); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-420px) scale(1.2); opacity: 0; } }
         .animate-bubble { animation: bubble 9s ease-in infinite; }
+        html { scroll-behavior: smooth; }
       `}</style>
     </div>
   )
